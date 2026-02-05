@@ -1,0 +1,21 @@
+{
+  "name": "helix",
+  "description": "shadcn/ui + Veriff Design System template with dark mode support",
+  "type": "vite-react",
+  "setup": {
+    "command": "make setup",
+    "timeout": 300000
+  },
+  "env": {
+    "PROJECT_SLUG": "{{slug}}",
+    "VITE_BASE_URL": "/apps/{{slug}}/"
+  },
+  "dependencies": {
+    "runtime": "bun",
+    "framework": "react"
+  },
+  "changeDetection": {
+    "enabled": true,
+    "watch": ["src", "public", "*.json", "*.md"]
+  }
+}

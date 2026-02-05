@@ -1,0 +1,249 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* shadcn/ui + Helyx Design System Tokens */
+
+/* CSS Variables for Light/Dark Mode Theming */
+:root {
+  /* Helyx Colors - Light Mode (OKLCH) */
+  --background: oklch(100% 0 0); /* #ffffff */
+  --foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --card: oklch(100% 0 0); /* #ffffff */
+  --card-foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --popover: oklch(100% 0 0); /* #ffffff */
+  --popover-foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --primary: oklch(42.29% 0.048 190.35); /* #11615c - Teal/700 */
+  --primary-foreground: oklch(100% 0 0); /* #ffffff */
+
+  --secondary: oklch(98.04% 0 0); /* #fafafa - Gray/50 */
+  --secondary-foreground: oklch(56.59% 0 0); /* #757575 - Gray/600 */
+
+  --muted: oklch(98.04% 0 0); /* #fafafa - Gray/50 */
+  --muted-foreground: oklch(56.59% 0 0); /* #757575 - Gray/600 */
+
+  --accent: oklch(86.63% 0.134 180.84); /* #14e5c5 - Teal/400 */
+  --accent-foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --destructive: oklch(62.8% 0.258 29.23); /* #ef4444 - Red/500 */
+  --destructive-foreground: oklch(100% 0 0); /* #ffffff */
+
+  --border: oklch(96.08% 0 0); /* #f5f5f5 - Gray/100 */
+  --input: oklch(96.08% 0 0); /* #f5f5f5 - Gray/100 */
+  --ring: oklch(42.29% 0.048 190.35); /* #11615c - Teal/700 */
+
+  /* Helyx Spacing Scale */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-m: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4.5rem; /* 72px */
+  --spacing-5xl: 6rem; /* 96px */
+
+  /* Helyx Border Radius */
+  --radius: 0.5rem; /* 8px - Helyx Medium Border Radius */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 1.5rem; /* 24px */
+
+  /* Helyx Typography Scale */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  --line-height-xs: 1.25;
+  --line-height-sm: 1.375;
+  --line-height-base: 1.5;
+  --line-height-lg: 1.625;
+  --line-height-xl: 1.75;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.02em;
+
+  /* Helyx Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* Chart Colors - Helyx Brand Palette (space-separated HSL for Recharts SVG) */
+  --chart-1: 180 64% 33%; /* Teal/700 - #11615c - Primary brand */
+  --chart-2: 180 82% 49%; /* Teal/400 - #14e5c5 - Highlight */
+  --chart-3: 180 61% 37%; /* Teal/600 - Strong accent */
+  --chart-4: 180 54% 44%; /* Teal/500 - Medium accent */
+  --chart-5: 180 71% 73%; /* Teal/300 - Light accent */
+
+  /* Sidebar */
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+  /* Helyx Colors - Dark Mode (OKLCH) */
+  --background: oklch(27.84% 0 0); /* #212121 */
+  --foreground: oklch(98.04% 0 0); /* #fafafa */
+
+  --card: oklch(32% 0 0); /* #3a3a3a */
+  --card-foreground: oklch(98.04% 0 0); /* #fafafa */
+
+  --popover: oklch(32% 0 0); /* #3a3a3a */
+  --popover-foreground: oklch(98.04% 0 0); /* #fafafa */
+
+  --primary: oklch(86.63% 0.134 180.84); /* #14e5c5 - Teal/400 */
+  --primary-foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --secondary: oklch(35% 0 0); /* #424242 */
+  --secondary-foreground: oklch(90% 0 0); /* #e5e5e5 */
+
+  --muted: oklch(35% 0 0); /* #424242 */
+  --muted-foreground: oklch(75% 0 0); /* #bfbfbf */
+
+  --accent: oklch(42.29% 0.048 190.35); /* #11615c - Teal/700 */
+  --accent-foreground: oklch(98.04% 0 0); /* #fafafa */
+
+  --destructive: oklch(68% 0.228 29.23); /* #f87171 - Red/400 */
+  --destructive-foreground: oklch(27.84% 0 0); /* #212121 */
+
+  --border: oklch(35% 0 0); /* #424242 */
+  --input: oklch(35% 0 0); /* #424242 */
+  --ring: oklch(86.63% 0.134 180.84); /* #14e5c5 - Teal/400 */
+
+  /* Chart Colors - Dark Mode - Helyx Brand Palette (space-separated HSL for Recharts SVG) */
+  --chart-1: 180 82% 49%; /* Teal/400 - #14e5c5 - Highlight (primary in dark) */
+  --chart-2: 180 71% 73%; /* Teal/300 - Light accent */
+  --chart-3: 180 54% 44%; /* Teal/500 - Medium accent */
+  --chart-4: 180 61% 37%; /* Teal/600 - Strong accent */
+  --chart-5: 180 64% 33%; /* Teal/700 - #11615c - Primary brand */
+
+  /* Sidebar - Dark Mode */
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/* Tailwind v4 Theme: Map CSS variables to Tailwind utilities */
+@theme inline {
+  /* Colors - mapped to CSS variables for dynamic theming */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart Colors - Wrap in hsl() for Tailwind utilities (Recharts uses raw --chart-N) */
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* NOTE: Helyx spacing/radius variables NOT mapped to @theme to avoid conflicts with Tailwind's size utilities (max-w-sm, rounded-sm, etc.)
+     Use Helyx spacing directly: var(--spacing-sm) for padding/margin
+     Use Tailwind utilities: max-w-sm, p-4, rounded-lg for layout */
+
+  /* Helyx Typography */
+  --font-size-xs: var(--font-size-xs);
+  --font-size-sm: var(--font-size-sm);
+  --font-size-base: var(--font-size-base);
+  --font-size-lg: var(--font-size-lg);
+  --font-size-xl: var(--font-size-xl);
+  --font-size-2xl: var(--font-size-2xl);
+  --font-size-3xl: var(--font-size-3xl);
+  --font-size-4xl: var(--font-size-4xl);
+
+  --line-height-xs: var(--line-height-xs);
+  --line-height-sm: var(--line-height-sm);
+  --line-height-base: var(--line-height-base);
+  --line-height-lg: var(--line-height-lg);
+  --line-height-xl: var(--line-height-xl);
+
+  --letter-spacing-tight: var(--letter-spacing-tight);
+  --letter-spacing-normal: var(--letter-spacing-normal);
+  --letter-spacing-wide: var(--letter-spacing-wide);
+
+  /* Helyx Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-base: var(--shadow-base);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    font-feature-settings:
+      'liga' 1,
+      'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
