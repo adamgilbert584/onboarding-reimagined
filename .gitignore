@@ -14,6 +14,11 @@ coverage
 .env.*
 !.env.example
 
+# Secrets collection files
+.secrets.local
+.secrets.*
+!.secrets.template
+
 # Misc
 .DS_Store
 *.local
